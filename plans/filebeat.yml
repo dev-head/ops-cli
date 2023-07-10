@@ -1,0 +1,15 @@
+#
+upload_files:
+  - source: bin/install_filebeat.sh
+    destination: install_filebeat.sh
+
+# NOTE: this uses a custom file beat file, we need var support.
+upload_files:
+  - source: data/upload/example.filebeat.yml
+    destination: filebeat.yml
+
+run:
+  - ./install_filebeat.sh
+  - rm install_filebeat.sh
+  - mv filebeat.yml /etc/filebeat/filebeat.yml
+  - service filebeat restart

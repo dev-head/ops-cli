@@ -1,0 +1,30 @@
+#
+# Filebeat configuration
+# This file is managed by the ops-cli manual-mation
+#
+name: "logstash"
+hostname: "api.example.com"
+logging.level: info
+
+filebeat.prospectors:
+
+- input_type: log
+  paths: /var/log/apache2/*access.log
+  encoding: utf-8
+  document_type: httpd_combined_access
+  close_inactive: 20m
+  fields_under_root: true
+  fields:
+    stage: "prod"
+
+- input_type: log
+  paths: /var/log/apache2/*error.log
+  encoding: utf-8
+  document_type: httpd_errorlog
+  close_inactive: 20m
+  fields_under_root: true
+  fields:
+    stage: "prod"
+
+output.logstash:
+  hosts: ["example.logstash-service.io:5044"]

@@ -1,0 +1,7 @@
+click==7.1.2
+paramiko==2.8.1
+fabric
+boto3
+PyYAML
+requests
+pydash

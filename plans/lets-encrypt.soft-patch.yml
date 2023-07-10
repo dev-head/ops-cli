@@ -1,0 +1,8 @@
+run:
+  - sudo apt-get update
+  - echo "[openssl available]::[$(apt-cache policy openssl | grep -i 'installed|Candidate')]"
+  - if [ $(which openssl) ]; then echo "[openssl]::[found existing]::[$(openssl version)]"; else echo "[openssl]::[missing]"; fi
+  - if [ $(which openssl) ]; then echo "[openssl]::[found existing]::[$(openssl version)]::[available]::[$(apt-cache policy openssl | grep -i 'installed|Candidate')]"; else echo "[openssl]::[missing]"; fi
+  - sudo apt-get update; sudo apt-get install openssl
+  - if [ -f /usr/share/ca-certificates/mozilla/DST_Root_CA_X3.crt ]; then sudo mv /usr/share/ca-certificates/mozilla/DST_Root_CA_X3.crt /tmp/DST_Root_CA_X3.crt.dist; fi
+  - if [ $(which update-ca-certificates) ]; then sudo update-ca-certificates; fi

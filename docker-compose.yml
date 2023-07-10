@@ -1,0 +1,25 @@
+version: '2.1'
+
+services:
+
+  tools:
+    build:
+      context: .
+    image: python:3.7
+    working_dir: /usr/src/app
+    entrypoint: ['python', 'cli.py']
+    env_file:
+      - local.env
+    volumes:
+      - .:/usr/src/app
+      - ~/.aws:/root/.aws
+
+  # dependencies installed locally.
+  install_vendors:
+    image: python:3.7
+    working_dir: /usr/src/app
+    volumes:
+    - .:/usr/src/app
+    environment:
+      PYTHONUSERBASE: /usr/src/app/vendor
+    command: pip install -r requirements.txt --user --upgrade --no-compile

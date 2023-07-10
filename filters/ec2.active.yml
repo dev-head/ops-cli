@@ -1,0 +1,6 @@
+# https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html
+filters:
+  - Name: instance-state-name
+    Values: ["running"]
+
+# limit: 1

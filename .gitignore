@@ -1,0 +1,26 @@
+# IDE/OS ignores
+.idea 
+.DS_Store
+*.sublime-*
+*.ide-plugin.xml
+
+# Functional ignores 
+!.gitkeep
+.terraform
+.tfstate-bkup
+*.pyc
+*.env
+.serverless
+vendor/*
+data/ssh-keys/*.priv
+data/ec2/*.json
+log/*.csv
+log/*.json
+data/cache/*
+.lambda-layers*
+terraform/*/*.ini
+lambda/layers/archive/*
+lambda/layers/build/*
+lambda/layers/deploy/*
+terraform/*/builds/*
+terraform/*/lambda/*

@@ -1,0 +1,8 @@
+#
+upload_files:
+  - source: bin/install_ssm.sh
+    destination: install_ssm.sh
+
+run:
+  -  sudo ./install_ssm.sh
+  - rm install_ssm.sh

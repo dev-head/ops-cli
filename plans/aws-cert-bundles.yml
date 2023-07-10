@@ -1,0 +1,4 @@
+
+# new dir and download cert.
+run:
+  - sudo mkdir -p /etc/ssl/certs; sudo curl -o /etc/ssl/certs/rds-combined-ca-bundle.pem https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem

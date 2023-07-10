@@ -1,0 +1,6 @@
+#
+# Used to run apt-get update
+# eta:
+#
+run:
+  -  sudo if $(which apt-get 2> /dev/null); then apt-get update; fi

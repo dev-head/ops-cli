@@ -1,0 +1,10 @@
+# https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html
+filters:
+  - Name: instance-state-name
+    Values: ["running"]
+
+  - Name: "tag:Name"
+    Values: ["example"]
+
+# sanity
+limit: 1

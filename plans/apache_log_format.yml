@@ -1,0 +1,10 @@
+
+upload_files:
+  - source: data/upload/apache_general.conf
+    destination: apache_general.conf
+
+run:
+  - sudo mv apache_general.conf /etc/apache2/conf-available/default.conf
+  - sudo a2enconf default.conf
+  - sudo apachectl configtest
+  - sudo service apache2 reload

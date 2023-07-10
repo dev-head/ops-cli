@@ -1,0 +1,17 @@
+#
+# This is used to update the security banner on all machines
+# eta: 15 Minutes
+#
+upload_files:
+  - source: bin/install_security_banner.sh
+    destination: install_security_banner.sh
+
+  - source: data/upload/motd.sh
+    destination: 99-default-banner
+
+  - source: data/upload/motd.ssh-man.asc.md
+    destination: default.asc
+
+run:
+  -  ./install_security_banner.sh
+  - rm install_security_banner.sh

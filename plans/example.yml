@@ -1,0 +1,10 @@
+#
+upload_files:
+  - source: bin/example.sh
+    destination: example.sh
+
+run:
+  - hostname
+  - lsb_release -a
+  -  ./example.sh
+  - rm example.sh

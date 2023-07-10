@@ -1,0 +1,8 @@
+#
+upload_files:
+  - source: data/upload/rds_ca-bundle.rds.pem
+    destination: rds-combined-ca-bundle.pem
+
+run:
+  - mkdir -p /etc/ssl/certs/
+  - mv /etc/ssl/certs/rds-combined-ca-bundle.pem

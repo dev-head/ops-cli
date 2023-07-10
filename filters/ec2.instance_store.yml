@@ -1,0 +1,9 @@
+# https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html
+filters:
+  - Name: instance-state-name
+    Values: ["running"]
+
+  - Name: root-device-type
+    Values: ["instance-store"]
+
+limit: 1

@@ -1,0 +1,8 @@
+
+upload_files:
+  - source: bin/install_cw.unified.sh
+    destination: install_cw.unified.sh
+
+run:
+  - sudo ./install_cw.unified.sh 
+  - rm install_cw.unified.sh

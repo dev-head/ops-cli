@@ -1,0 +1,11 @@
+#
+# This is used to check for ephemeral disk usage
+# eta: 15 Minutes
+#
+upload_files:
+  - source: bin/check_ephemeral_disk.sh
+    destination: check_ephemeral_disk.sh
+
+run:
+  - sudo ./check_ephemeral_disk.sh
+  - rm check_ephemeral_disk.sh

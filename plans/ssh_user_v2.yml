@@ -1,0 +1,9 @@
+
+upload_files:
+  - source: bin/usercreate.v2.sh
+    destination: usercreate.v2.sh
+
+run:
+  - chmod +x ./usercreate.v2.sh
+  - sudo ./usercreate.v2.sh "unamewhat" "sha-blahblah"
+  - rm usercreate.v2.sh

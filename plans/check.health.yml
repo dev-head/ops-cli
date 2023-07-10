@@ -1,0 +1,6 @@
+run:
+  - lsof -i | grep ":" | grep -i listen | column -tx  | awk '{ print $9, "["$3"]", "("$1")", "<"$8">" }' | column -tx | uniq
+  - cat /etc/fstab
+  - mount -l
+  - sudo df -h
+  - free -m
